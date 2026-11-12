@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Rafiul Karim",
+    "picture": "https://randomuser.me/api/portraits/men/32.jpg",
+    "email": "rafiul.karim@gmail.com",
+    "days_since_contact": 21,
+    "status": "overdue",
+    "tags": ["school", "close friend"],
+    "bio": "Sat next to me from class six to HSC. Always up for late-night talks about cricket and career plans.",
+    "goal": 14,
+    "next_due_date": "2026-11-05"
+  },
+  {
+    "id": 2,
+    "name": "Tasnia Rahman",
+    "picture": "https://randomuser.me/api/portraits/women/44.jpg",
+    "email": "tasnia.rahman@gmail.com",
+    "days_since_contact": 12,
+    "status": "almost due",
+    "tags": ["college", "study partner"],
+    "bio": "Prepares for medical admission. We swap study notes and share tips on managing exam stress.",
+    "goal": 14,
+    "next_due_date": "2026-11-14"
+  },
+  {
+    "id": 3,
+    "name": "Shakib Hasan",
+    "picture": "https://randomuser.me/api/portraits/men/45.jpg",
+    "email": "shakib.hasan@gmail.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["coding", "project partner"],
+    "bio": "Fellow web developer. We review each other's React projects and plan to build a team app together.",
+    "goal": 30,
+    "next_due_date": "2026-12-07"
+  },
+  {
+    "id": 4,
+    "name": "Nusrat Jahan",
+    "picture": "https://randomuser.me/api/portraits/women/68.jpg",
+    "email": "nusrat.jahan@gmail.com",
+    "days_since_contact": 45,
+    "status": "overdue",
+    "tags": ["cousin", "family"],
+    "bio": "My cousin studying in Dhaka. We used to video call every weekend before her semester got busy.",
+    "goal": 30,
+    "next_due_date": "2026-10-28"
+  },
+  {
+    "id": 5,
+    "name": "Imran Hossain",
+    "picture": "https://randomuser.me/api/portraits/men/22.jpg",
+    "email": "imran.hossain@gmail.com",
+    "days_since_contact": 28,
+    "status": "almost due",
+    "tags": ["neighbor", "mentor"],
+    "bio": "Senior brother studying CSE. Gave me honest advice on university admission and learning to code.",
+    "goal": 30,
+    "next_due_date": "2026-11-14"
+  },
+  {
+    "id": 6,
+    "name": "Farhana Akter",
+    "picture": "https://randomuser.me/api/portraits/women/12.jpg",
+    "email": "farhana.akter@gmail.com",
+    "days_since_contact": 3,
+    "status": "on-track",
+    "tags": ["college", "close friend"],
+    "bio": "Best friend from Rangpur Government College. We talk almost daily about exams and life after HSC.",
+    "goal": 7,
+    "next_due_date": "2026-11-16"
+  },
+  {
+    "id": 7,
+    "name": "Mehedi Hasan",
+    "picture": "https://randomuser.me/api/portraits/men/75.jpg",
+    "email": "mehedi.hasan@gmail.com",
+    "days_since_contact": 60,
+    "status": "overdue",
+    "tags": ["childhood", "gaming"],
+    "bio": "Childhood friend who moved to Chattogram. We still chat over online games when time allows.",
+    "goal": 45,
+    "next_due_date": "2026-10-28"
+  },
+  {
+    "id": 8,
+    "name": "Sadia Islam",
+    "picture": "https://randomuser.me/api/portraits/women/26.jpg",
+    "email": "sadia.islam@gmail.com",
+    "days_since_contact": 10,
+    "status": "on-track",
+    "tags": ["coaching", "study partner"],
+    "bio": "Met at coaching center. Strong in Physics and always helps me with tough problems.",
+    "goal": 21,
+    "next_due_date": "2026-11-23"
+  },
+  {
+    "id": 9,
+    "name": "Tanvir Ahmed",
+    "picture": "https://randomuser.me/api/portraits/men/53.jpg",
+    "email": "tanvir.ahmed@gmail.com",
+    "days_since_contact": 13,
+    "status": "almost due",
+    "tags": ["content creator", "video editing"],
+    "bio": "Edits videos for his own YouTube channel. We exchange thumbnail ideas and editing tricks.",
+    "goal": 14,
+    "next_due_date": "2026-11-13"
+  },
+  {
+    "id": 10,
+    "name": "Maliha Chowdhury",
+    "picture": "https://randomuser.me/api/portraits/women/90.jpg",
+    "email": "maliha.chowdhury@gmail.com",
+    "days_since_contact": 17,
+    "status": "on-track",
+    "tags": ["school", "debate club"],
+    "bio": "Former debate club teammate. Great speaker who encourages me to share my projects publicly.",
+    "goal": 30,
+    "next_due_date": "2026-11-25"
+  }
+]

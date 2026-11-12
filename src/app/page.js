@@ -1,5 +1,6 @@
 import Banner from "@/components/Banner/Banner";
 import Summary from "@/components/Summary/Summary";
+import FriendList from "./friends/page";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <Banner></Banner>
       <Summary></Summary>
       <div className="divider"></div>
+      <FriendList></FriendList>
     </div>
   );
 }

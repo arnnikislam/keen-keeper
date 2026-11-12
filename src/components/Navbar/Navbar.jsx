@@ -9,7 +9,6 @@ import { TfiStatsUp } from "react-icons/tfi";
 
 const Navbar = () => {
   const pathname = usePathname();
-  console.log(pathname);
   const links = (
     <>
       <li>
