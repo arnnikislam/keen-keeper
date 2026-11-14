@@ -2,9 +2,9 @@ import FriendCard from "@/components/FriendCard/FriendCard";
 import React from "react";
 
 const FriendList = async () => {
-  const res = await fetch("http://localhost:3000/friends.json", {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    "https://keen-keeper-one-jade.vercel.app/friends.json",
+  );
   const friends = await res.json();
 
   return (

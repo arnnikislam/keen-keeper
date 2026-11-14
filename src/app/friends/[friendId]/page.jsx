@@ -7,7 +7,9 @@ import { RiDeleteBin5Line, RiNotificationSnoozeLine } from "react-icons/ri";
 
 const FriendDetailPage = async ({ params }) => {
   const { friendId } = await params;
-  const res = await fetch("http://localhost:3000/friends.json");
+  const res = await fetch(
+    "https://keen-keeper-one-jade.vercel.app/friends.json",
+  );
   const friends = await res.json();
   const filteredFriend = friends.find(
     (friend) => friend.id === Number(friendId),
