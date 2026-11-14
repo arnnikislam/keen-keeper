@@ -4,6 +4,7 @@ import { CheckInContext } from "@/context/CheckInContext";
 import Image from "next/image";
 import React, { useContext, useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
+import { FiSearch } from "react-icons/fi";
 
 const filterLabels = {
   all: "All",
@@ -23,6 +24,7 @@ const TimelinePage = () => {
   const { items } = useContext(CheckInContext);
   const [filter, setFilter] = useState("");
   const [sort, setSort] = useState("");
+  const [search, setSearch] = useState("");
 
   if (items.length === 0) {
     return (
@@ -33,14 +35,24 @@ const TimelinePage = () => {
     );
   }
 
-
+  // 1. filter by type
   const filteredItems =
     !filter || filter === "all"
       ? items
       : items.filter((item) => item.type === filter);
 
+  // 2. search by friend name or interaction type
+  const query = search.trim().toLowerCase();
+  const searchedItems = query
+    ? filteredItems.filter(
+        (item) =>
+          item.name.toLowerCase().includes(query) ||
+          item.type.toLowerCase().includes(query),
+      )
+    : filteredItems;
 
-  const sortedItems = [...filteredItems].sort((a, b) => {
+  // 3. sort by date
+  const sortedItems = [...searchedItems].sort((a, b) => {
     if (sort === "newest") return getTimestamp(b) - getTimestamp(a);
     if (sort === "oldest") return getTimestamp(a) - getTimestamp(b);
     return 0;
@@ -61,6 +73,18 @@ const TimelinePage = () => {
       <h2 className="font-bold text-3xl">Timeline</h2>
 
       <div className="my-4 flex flex-wrap items-center gap-2">
+        {/* Search */}
+        <label className="input flex w-full items-center gap-2 border border-base-300 bg-[#F8FAFC] shadow sm:w-72">
+          <FiSearch className="text-[#64748B]" />
+          <input
+            type="search"
+            className="grow"
+            placeholder="Search by name or type"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </label>
+
         {/* Filter dropdown */}
         <div className="dropdown">
           <div tabIndex={0} role="button">
@@ -181,7 +205,9 @@ const TimelinePage = () => {
         })}
 
         {sortedItems.length === 0 && (
-          <p className="text-[#64748B]">No {filter} check-ins yet.</p>
+          <p className="text-[#64748B]">
+            No check-ins match your search or filter.
+          </p>
         )}
       </div>
     </div>
