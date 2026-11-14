@@ -2,23 +2,72 @@
 import EmptyTimeline from "@/components/EmptyTimeline/EmptyTimeline";
 import { CheckInContext } from "@/context/CheckInContext";
 import Image from "next/image";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import { FaChevronDown } from "react-icons/fa";
+
+const filterLabels = {
+  all: "All",
+  text: "Text",
+  call: "Call",
+  video: "Video",
+};
 
 const TimelinePage = () => {
   const { items } = useContext(CheckInContext);
+  const [filter, setFilter] = useState("");
   if (items.length === 0) {
     return (
       <div className="my-10">
         <h2 className="font-bold text-3xl">Timeline</h2>
-        <EmptyTimeline/>
+        <EmptyTimeline />
       </div>
     );
   }
+
+  const filteredItems =
+    !filter || filter === "all"
+      ? items
+      : items.filter((item) => item.type === filter);
+
+  const handleFilter = (type) => {
+    setFilter(type);
+    document.activeElement?.blur();
+  };
+
   return (
     <div className="my-10">
       <h2 className="font-bold text-3xl">Timeline</h2>
+
+      <div className="dropdown my-4">
+        <div tabIndex={0} role="button" className="m-1">
+          <div className="flex justify-between items-center w-60 btn bg-[#F8FAFC] rounded shadow">
+            <span>{filterLabels[filter] || "Filter Timeline"}</span>
+            <span>
+              <FaChevronDown />
+            </span>
+          </div>
+        </div>
+        <ul
+          tabIndex={-1}
+          className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
+        >
+          <li>
+            <button onClick={() => handleFilter("all")}>All</button>
+          </li>
+          <li>
+            <button onClick={() => handleFilter("text")}>Text</button>
+          </li>
+          <li>
+            <button onClick={() => handleFilter("call")}>Call</button>
+          </li>
+          <li>
+            <button onClick={() => handleFilter("video")}>Video</button>
+          </li>
+        </ul>
+      </div>
+
       <div className="my-4 space-y-4">
-        {items.map((item, index) => {
+        {filteredItems.map((item, index) => {
           return (
             <div key={index} className="bg-white rounded shadow p-4">
               {item.type === "call" ? (
@@ -82,6 +131,10 @@ const TimelinePage = () => {
             </div>
           );
         })}
+
+        {filteredItems.length === 0 && (
+          <p className="text-[#64748B]">No {filter} check-ins yet.</p>
+        )}
       </div>
     </div>
   );
