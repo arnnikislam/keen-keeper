@@ -2,6 +2,16 @@
 
 KeenKeeper is a small relationship-management dashboard for keeping meaningful friendships in view. Browse friends, see how recently you connected, log a call, text, or video check-in, and review a timeline and interaction breakdown.
 
+## Live demo
+
+[Open KeenKeeper](https://keen-keeper-one-jade.vercel.app/)
+
+## Preview
+
+<p align="center">
+  <img src="public/images/keenkeeper-mockup.png" alt="KeenKeeper dashboard on desktop with the check-in timeline on mobile" width="100%" />
+</p>
+
 ## Features
 
 - Friend dashboard backed by local mock data, with contact status, tags, and last-contact indicators.
