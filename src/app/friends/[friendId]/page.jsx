@@ -1,9 +1,8 @@
+import FriendNotFound from "@/components/FriendNotFound/FriendNotFound";
 import QuickCheckIn from "@/components/QuickCheckIn/QuickCheckIn";
 import Image from "next/image";
 import React from "react";
-import { BiMessageDots } from "react-icons/bi";
-import { FiArchive, FiPhoneCall } from "react-icons/fi";
-import { MdOutlineVideocam } from "react-icons/md";
+import { FiArchive } from "react-icons/fi";
 import { RiDeleteBin5Line, RiNotificationSnoozeLine } from "react-icons/ri";
 
 const FriendDetailPage = async ({ params }) => {
@@ -13,6 +12,9 @@ const FriendDetailPage = async ({ params }) => {
   const filteredFriend = friends.find(
     (friend) => friend.id === Number(friendId),
   );
+  if (!filteredFriend) {
+    return <FriendNotFound friendId={friendId}></FriendNotFound>;
+  }
   const {
     name,
     picture,
