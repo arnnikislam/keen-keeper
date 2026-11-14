@@ -8,7 +8,7 @@ export default function NotFound() {
   const router = useRouter();
 
   return (
-    <div className="fixed inset-0 z-[9999] overflow-y-auto bg-[#F8FAFC]">
+    <div className="fixed inset-0 z-9999 overflow-y-auto bg-[#F8FAFC]">
       {/* Soft background blobs */}
       <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-[#244d3f]/10 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-24 -right-24 h-80 w-80 rounded-full bg-[#244d3f]/10 blur-3xl" />
