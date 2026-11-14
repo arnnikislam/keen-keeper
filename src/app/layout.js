@@ -1,6 +1,8 @@
 import { Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
+import CheckInProvider from "@/context/CheckInContext";
+import { ToastContainer } from "react-toastify";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,8 +22,12 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} h-full antialiased bg-[#F8FAFC]`}
     >
       <body className="min-h-full flex flex-col container mx-auto">
-        <Navbar></Navbar>
-        <main className="w-[80%] mx-auto">{children}</main>
+        <CheckInProvider>
+          <Navbar></Navbar>
+          <main className="w-[80%] mx-auto">{children}</main>
+
+          <ToastContainer />
+        </CheckInProvider>
       </body>
     </html>
   );

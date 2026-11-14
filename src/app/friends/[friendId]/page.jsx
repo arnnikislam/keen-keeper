@@ -1,3 +1,4 @@
+import QuickCheckIn from "@/components/QuickCheckIn/QuickCheckIn";
 import Image from "next/image";
 import React from "react";
 import { BiMessageDots } from "react-icons/bi";
@@ -23,6 +24,7 @@ const FriendDetailPage = async ({ params }) => {
     goal,
     next_due_date,
   } = filteredFriend;
+
   return (
     <div className="py-10">
       <div className="flex flex-col md:flex-row gap-6">
@@ -108,29 +110,7 @@ const FriendDetailPage = async ({ params }) => {
           </div>
 
           {/* check-in card */}
-          <div className="shadow bg-white rounded flex flex-col p-6 space-y-4">
-            <p className="text-[#244D3F] text-[18px]">Quick Check-In</p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="btn flex-col h-20 lg:h-30 text-xl">
-                <span>
-                  <FiPhoneCall />
-                </span>
-                <span>Call</span>
-              </div>
-              <div className="btn flex-col h-20 lg:h-30 text-xl">
-                <span>
-                  <BiMessageDots />
-                </span>
-                <span>Text</span>
-              </div>
-              <div className="btn flex-col h-20 lg:h-30 text-xl">
-                <span>
-                  <MdOutlineVideocam />
-                </span>
-                <span>Video</span>
-              </div>
-            </div>
-          </div>
+          <QuickCheckIn name={name}></QuickCheckIn>
         </div>
       </div>
     </div>

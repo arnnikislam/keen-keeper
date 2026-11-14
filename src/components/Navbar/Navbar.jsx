@@ -41,7 +41,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <nav>
+    <nav className="sticky top-0">
       <div className="navbar bg-base-100 shadow-sm">
         <div className="navbar-start">
           <div className="dropdown">
@@ -70,7 +70,9 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <Image src="/images/logo.png" alt="logo" height="100" width="150" />
+          <Link href="/">
+            <Image src="/images/logo.png" alt="logo" height="100" width="150" />
+          </Link>
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal text-lg space-x-2">{links}</ul>
