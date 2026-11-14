@@ -1,10 +1,19 @@
 "use client";
+import EmptyTimeline from "@/components/EmptyTimeline/EmptyTimeline";
 import { CheckInContext } from "@/context/CheckInContext";
 import Image from "next/image";
 import React, { useContext } from "react";
 
 const TimelinePage = () => {
   const { items } = useContext(CheckInContext);
+  if (items.length === 0) {
+    return (
+      <div className="my-10">
+        <h2 className="font-bold text-3xl">Timeline</h2>
+        <EmptyTimeline/>
+      </div>
+    );
+  }
   return (
     <div className="my-10">
       <h2 className="font-bold text-3xl">Timeline</h2>
