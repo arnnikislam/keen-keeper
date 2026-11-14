@@ -1,5 +1,6 @@
 import FriendNotFound from "@/components/FriendNotFound/FriendNotFound";
 import QuickCheckIn from "@/components/QuickCheckIn/QuickCheckIn";
+import friends from "@/data/friends";
 import Image from "next/image";
 import React from "react";
 import { FiArchive } from "react-icons/fi";
@@ -7,10 +8,6 @@ import { RiDeleteBin5Line, RiNotificationSnoozeLine } from "react-icons/ri";
 
 const FriendDetailPage = async ({ params }) => {
   const { friendId } = await params;
-  const res = await fetch(
-    "https://keen-keeper-one-jade.vercel.app/friends.json",
-  );
-  const friends = await res.json();
   const filteredFriend = friends.find(
     (friend) => friend.id === Number(friendId),
   );

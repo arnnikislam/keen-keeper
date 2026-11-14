@@ -1,4 +1,5 @@
 import { Geist } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import CheckInProvider from "@/context/CheckInContext";
@@ -24,7 +25,9 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col container mx-auto">
         <CheckInProvider>
-          <Navbar></Navbar>
+          <Suspense fallback={<div className="h-16 bg-base-100 shadow-sm" />}>
+            <Navbar></Navbar>
+          </Suspense>
           <main className="w-[80%] mx-auto">{children}</main>
           <Footer></Footer>
           <ToastContainer />

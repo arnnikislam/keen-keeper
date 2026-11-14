@@ -66,7 +66,7 @@ const Footer = () => {
 
         {/* Bottom bar */}
         <div className="mt-10 flex w-full flex-col-reverse items-center gap-4 text-xs text-white/60 sm:flex-row sm:justify-between sm:gap-0">
-          <p>© {new Date().getFullYear()} KeenKeeper. All rights reserved.</p>
+          <p>©2026 KeenKeeper. All rights reserved.</p>
 
           <ul className="flex items-center gap-6">
             {legalLinks.map(({ label, href }) => (

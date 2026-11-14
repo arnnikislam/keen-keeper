@@ -1,12 +1,8 @@
 import FriendCard from "@/components/FriendCard/FriendCard";
+import friends from "@/data/friends";
 import React from "react";
 
-const FriendList = async () => {
-  const res = await fetch(
-    "https://keen-keeper-one-jade.vercel.app/friends.json",
-  );
-  const friends = await res.json();
-
+const FriendList = () => {
   return (
     <div className="my-8">
       <h2 className="font-bold text-xl my-4">Your Friends</h2>
